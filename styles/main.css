@@ -1,0 +1,61 @@
+/* copied from Kneel's Jewelry" */
+
+@import "details.css";
+@import url("https://fonts.googleapis.com/css?family=Comfortaa|Patua+One");
+
+/*Typography
+--------------------------------------------------------------*/
+body,
+button,
+input,
+select,
+textarea {
+	color: #404040;
+	font-family: "Comfortaa", Arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.5;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: "Patua One", serif;
+  letter-spacing: 2px;
+}
+
+ul {
+    list-style-type: none;
+    padding-inline-start: 0.25rem;
+}
+
+#orderButton {
+    margin: 1rem 0 2rem 2rem;
+    padding: 0.5rem;
+    background-color: rgb(17, 104, 107);
+    color: white;
+    font-size: 1rem;
+}
+
+#container {
+  display: flexbox;
+;}
+
+.choices {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.options {
+  background-color: lightgoldenrodyellow;
+  margin: 25px;
+  width: 255px;
+}
+
+.option1, .option2 {
+  width: 220px
+}
+
+.order-list {
+  width: 90%;
+  border: 1px dashed dodgerblue;
+  background-color: rgb(197, 230, 241);
+}
