@@ -123,3 +123,14 @@ export const addCustomOrder = async () => {
     // Broadcast a notification that permanent state has changed. You can broadcast this message whenever you want. Right now, you don't know when that would be, but you'll discover more ways to do this soon.
     document.dispatchEvent(new CustomEvent("stateChanged"));
 };
+
+export const completeOrder = async (orderId) => {
+    await fetch(`https://localhost:7177/orders/${orderId}/fulfill`, {
+        method: "POST",
+        // headers: {
+        //     "Content-Type": "application/json",
+        // },
+        // body: JSON.stringify(orderId),
+    });
+    document.dispatchEvent(new CustomEvent("stateChanged"));
+};
