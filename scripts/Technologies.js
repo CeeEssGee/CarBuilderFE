@@ -1,5 +1,5 @@
 import { getTechnologies, setTechnology } from "./database.js"
-const technologies = getTechnologies()
+const technologies = await getTechnologies()
 
 document.addEventListener(
     "change",
@@ -13,34 +13,12 @@ document.addEventListener(
 
 export const Technologies = () => {
     let html = ""
-        html += `<select id="technology">
+    html += `<select id="technology">
         <option value="0">Select technology package</option>`
-        for (const technology of technologies) {
-            html += `<option value="${technology.id}">${technology.tech}</option>`
+    for (const technology of technologies) {
+        html += `<option value="${technology.id}">${technology.package}</option>`
     }
     html += `</select>`
 
     return html
 }
-
-// radio option
-/*
-document.addEventListener(
-    "change",
-    (event) => {
-        if (event.target.name === "technology") {
-            setTechnology(parseInt(event.target.value))
-        }
-    }
-)
-
-export const Technologies = () => {
-    let html = "<ul>"
-    for (const technology of technologies) {
-        html += `<li>
-        <input type="radio" name="technology" value="${technology.id}" />${technology.tech}</li>`
-    }
-    html += "</ul>"
-    return html
-}
-*/

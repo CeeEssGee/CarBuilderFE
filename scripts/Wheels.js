@@ -1,5 +1,5 @@
 import { getWheels, setWheel } from "./database.js"
-const wheels = getWheels()
+const wheels = await getWheels()
 
 document.addEventListener(
     "change",
@@ -13,34 +13,12 @@ document.addEventListener(
 
 export const Wheels = () => {
     let html = ""
-        html += `<select id="wheel">
+    html += `<select id="wheel">
         <option value="0">Select wheel option</option>`
-        for (const wheel of wheels) {
-            html += `<option value="${wheel.id}">${wheel.wheel}</option>`
+    for (const wheel of wheels) {
+        html += `<option value="${wheel.id}">${wheel.style}</option>`
     }
     html += `</select>`
 
     return html
 }
-
-/*
-// radio option
-document.addEventListener(
-    "change",
-    (event) => {
-        if (event.target.name === "wheel") {
-            setWheel(parseInt(event.target.value))
-        }
-    }
-)
-
-export const Wheels = () => {
-    let html = "<ul>"
-    for (const wheel of wheels) {
-        html += `<li>
-        <input type="radio" name="wheel" value="${wheel.id}" />${wheel.wheel}</li>`
-    }
-    html += "</ul>"
-    return html
-}
-*/

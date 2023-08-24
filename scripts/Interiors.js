@@ -1,5 +1,5 @@
 import { getInteriors, setInterior } from "./database.js"
-const interiors = getInteriors()
+const interiors = await getInteriors()
 
 document.addEventListener(
     "change",
@@ -11,38 +11,16 @@ document.addEventListener(
     }
 )
 
+
 export const Interiors = () => {
     let html = ""
-        html += `<select id="interior">
+    html += `<select id="interior">
         <option value="0">Select interior package</option>`
-        for (const interior of interiors) {
-            html += `<option value="${interior.id}">${interior.name}</option>`
+    for (const interior of interiors) {
+        html += `<option value="${interior.id}">${interior.name}</option>`
     }
     html += `</select>`
 
     return html
 }
 
-
-
-// radio button
-/*
-document.addEventListener(
-    "change",
-    (event) => {
-        if (event.target.name === "interior") { // or interiors
-            setInterior(parseInt(event.target.value))
-        }
-    }
-)
-
-export const Interiors = () => {
-    let html = "<ul>"
-    for (const interior of interiors) {
-        html += `<li>
-        <input type="radio" name="interior" value="${interior.id}" />${interior.name}</li>`
-    }
-    html += "</ul>"
-    return html
-}
-*/

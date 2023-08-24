@@ -13,7 +13,7 @@ document.addEventListener("click", (event) => {
 )
 
 
-export const CarsRUs = () => {
+export const CarsRUs = async () => {
     return `
         <h1>Cars 'R Us: Personal Car Builder</h1>
 
@@ -47,7 +47,7 @@ export const CarsRUs = () => {
         <article class="customOrders">
             <h2>Custom Car Orders</h2>
             <div class="order-list">
-            ${Orders()}
+            ${await Orders()}
             </div>
         </article>
     `
